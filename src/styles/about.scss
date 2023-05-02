@@ -1,0 +1,24 @@
+@import './globals.scss';
+
+.about{
+  padding: 100px 0 0 0;
+  img{
+    width: 80%;
+    border-radius: 50%;
+    @include breakpoint(sm){
+      display: none;
+    }
+  }
+}
+
+.content{
+  padding: 0 0 0 5%;
+  p{
+    text-align: left;
+  }
+  .head{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
+}

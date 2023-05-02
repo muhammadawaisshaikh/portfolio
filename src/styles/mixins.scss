@@ -1,0 +1,43 @@
+@mixin bgHead() {
+    h3 {
+      &.bgHead{
+        font-size: 150px;
+        @include breakpoint(sm){
+          font-size: 60px; 
+          text-align: center;
+          width: 100%;
+        }
+        font-weight: 900;
+        position: absolute;
+        top: 0%;
+        color: #ccc;
+      }
+    }
+  }
+  
+  // responsive with max
+  @mixin breakpoint($class) {
+    @if $class == xs {
+      @media (max-width: 375px) { @content; }
+    }
+  
+    @else if $class == sm {
+      @media (max-width: 600px) { @content; }
+    }
+  
+    @else if $class == md {
+      @media (max-width: 768px) { @content; }
+    }
+  
+    @else if $class == lg {
+      @media (max-width: 1366px) { @content; }
+    }
+  
+    @else if $class == xl {
+      @media (max-width: 1920px) { @content; }
+    }
+  
+    @else {
+      @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+    }
+  }
